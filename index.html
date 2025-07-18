@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Edencart - Grocery App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://i.imgur.com/J1mZfDP.png" alt="Edencart" class="icon"/>
+      <h1><span>E</span>denCart</h1>
+    </div>
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('cart')">Cart (<span id="cart-count">0</span>)</button>
+      <button onclick="showSection('checkout')">Checkout</button>
+      <button onclick="showSection('track')">Track Order</button>
+      <button onclick="showSection('rewards')">Rewards</button>
+      <button onclick="showSection('login')">Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="section active">
+      <div class="banner"><h2>Freshness at Your Doorstep</h2></div>
+      <div class="products" id="product-list"></div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="section">
+      <h2>Your Cart</h2>
+      <p class="cart-msg">Happy shopping with us! 😊</p>
+      <ul id="cart-items"></ul>
+      <div id="coupon-section">
+        <input id="coupon-input" placeholder="Coupon Code"/>
+        <button onclick="applyCoupon()">Apply</button>
+        <p id="coupon-msg"></p>
+      </div>
+      <p id="cart-total"></p>
+      <button onclick="showSection('checkout')" class="btn-primary">Proceed to Checkout</button>
+    </section>
+
+    <!-- Checkout -->
+    <section id="checkout" class="section">
+      <h2>Checkout</h2>
+      <div class="checkout-form">
+        <input id="name" placeholder="Name"/>
+        <input id="address" placeholder="Address"/>
+        <input id="phone" placeholder="Phone"/>
+        <input id="pincode" placeholder="PIN Code"/>
+        <button onclick="placeOrder()" class="btn-primary">Place Order</button>
+      </div>
+      <p id="checkout-msg"></p>
+    </section>
+
+    <!-- Track Order -->
+    <section id="track" class="section">
+      <h2>Track Order</h2>
+      <input id="track-input" placeholder="Enter Order ID"/>
+      <button onclick="trackOrder()">Track</button>
+      <p id="track-msg"></p>
+    </section>
+
+    <!-- Rewards -->
+    <section id="rewards" class="section">
+      <h2>Rewards</h2>
+      <p>You have <span id="reward-points">0</span> points.</p>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="section">
+      <h2>Login</h2>
+      <input id="login-user" placeholder="Username"/>
+      <input id="login-pass" type="password" placeholder="Password"/>
+      <button onclick="login()" class="btn-primary">Login</button>
+      <p id="login-msg"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="#">FAQ</a> |
+      <a href="#">Contact Us</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Refund Policy</a>
+    </div>
+    <p>© 2025 Edencart. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
